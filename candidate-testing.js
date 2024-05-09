@@ -29,9 +29,9 @@ function askQuestion() {
 function gradeQuiz(candidateAnswer) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   
-  let result = "correct ";
-    if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-      result = "incorrect";
+  let result = "Correct! ";
+  if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      result = "Incorrect";
     } 
     console.log("Correct answer:", correctAnswer);
     console.log(`Your answer: ${result}`);
