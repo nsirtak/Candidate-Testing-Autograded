@@ -24,25 +24,27 @@ candidateName = input.question("What is your name?");
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   candidateAnswer = input.question(question);
-  }
-
-function gradeQuiz(candidateAnswer) {
+}
+function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   
-  let result = "Correct! ";
-  if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-      result = "Incorrect";
-    } 
-    console.log("Correct answer:", correctAnswer);
-    console.log(`Your answer: ${result}`);
+  
+  console.log('Your answer:', candidateAnswer);
+  console.log('Correct answer:', correctAnswer);
+  const isCorrect = candidateAnswer.toLowerCase() === correctAnswer.toLowerCase();
+  if (isCorrect) {
+    console.log("Correct answer!");
+  } else {
+    console.log("Incorrect answer. Try again later");
+  }
 
-//TODO 3.2 use this variable to calculate the candidates score.
 
-  let grade;
- 
+
+  let grade; //TODO 3.2 use this variable to calculate the candidates score.
+
   return grade;
-}
 
+}
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
