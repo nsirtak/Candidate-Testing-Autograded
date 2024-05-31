@@ -30,21 +30,21 @@ let candidateAnswers=[];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-candidateName = input.question("What is your name?");
+  candidateName = input.question("What is your name?");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-for(i=0;i<questions.length;i++){
-  candidateAnswers[i] = input.question(questions[i]);
+  for (let i = 0; i < questions.length; i++) {
+    candidateAnswers[i] = input.question(questions[i]);
+  }
 }
-}
+
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let correctCount = 0;
-  for(let i = 0; i < questions.length; i++) {
-    if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-
+  for (let i = 0; i < questions.length; i++) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       console.log(`Question ${i+1}: ${questions[i]} \nYour answer: ${candidateAnswers[i]} Yes! Correct answer!\n`);
       correctCount++;
     } else {
@@ -54,7 +54,7 @@ function gradeQuiz(candidateAnswers) {
   let grade = (correctCount / questions.length) * 100;
   //TODO 3.2 use this variable to calculate the candidates score.
   console.log(`\nYour final score is ${grade}% (${correctCount} of 5 correct)`);
-  if(grade >= 80) {
+  if (grade >= 80) {
     console.log(">>> Status: PASSED");
   } else {
     console.log("\n>>> Status: FAILED. TRY AGAIN.");
